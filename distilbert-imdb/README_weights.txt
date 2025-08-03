@@ -1,4 +1,4 @@
-```
+
 Model weights are too large for ordinary Git (≈ 255 MB > GitHub’s 100 MB limit).
 
 Download once, then place here as:
@@ -7,4 +7,4 @@ Download once, then place here as:
 
 ### Download link
 https://github.com/j123and/imdb-sentiment/releases/download/v1.0.0/model.safetensors
-```
+
