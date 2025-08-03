@@ -3,12 +3,7 @@ from pydantic import BaseModel
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
-# --- load model & tokenizer -----------------------------------------------
-MODEL_PATH = "imdb-sentiment/distilbert-imdb"   # relative to working dir
-# ---- before ----
-MODEL_PATH = "imdb-sentiment/distilbert-imdb"
 
-# ---- after (relative to project root) ----
 MODEL_PATH = "distilbert-imdb"          # <-- just this
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
