@@ -30,7 +30,7 @@ uvicorn api.main:app --reload
 python -m venv .venv; .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 uvicorn api.main:app --reload
-
+````
 
 ## Example request
 
@@ -63,4 +63,5 @@ imdb-sentiment/
 ├ requirements.txt
 └ README.md
 ```
+
 
