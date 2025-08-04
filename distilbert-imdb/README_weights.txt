@@ -6,5 +6,5 @@ Download once, then place here as:
     distilbert-imdb/model.safetensors
 
 Download link
-https://github.com/j123and/imdb-sentiment/releases/download/v1.0.0/model.safetensors
+https://github.com/j123and/imdb-sentiment/releases/download/v1.4.0/model.safetensors
 
