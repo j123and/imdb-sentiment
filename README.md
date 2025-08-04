@@ -1,30 +1,36 @@
 # IMDb Sentiment (DistilBERT)
 
-**Task** Binary movie-review sentiment  
-**Model** `distilbert-base-uncased` fine-tuned for 3 epochs
+**Task** Binary sentiment on IMDb movie reviews  
+**Model** `distilbert-base-uncased`, fine-tuned **3 epochs**  
+&nbsp; • cosine LR decay • 5 % warm-up • max len 384 • effective batch 32
 
-| Split       | Accuracy |
-|-------------|----------|
-| Validation† | 0.926 |
-| Test‡       | 0.981 |
+| Split | Size | Accuracy |
+|-------|------|----------|
+| Validation† | 2 500 | **0.920** |
+| Test‡ | 25 000 | **0.919** |
 
-† 5 000 reviews (10 % split) • ‡ 25 000 reviews (official IMDb test set)
+† 10 % of the 25 k official *train* split (held out during training)  
+‡ Canonical 25 k IMDb *test* split — never seen while tuning
 
 ---
 
 ## Quick start
 
 ```bash
-# Docker
+# ── Docker ─────────────────────────────────────────────
 docker build -t imdb-sentiment .
-docker run -p 8000:80 imdb-sentiment
-# → http://localhost:8000/docs  for Swagger UI
+docker run -p 8000:80 imdb-sentiment          # → http://localhost:8000/docs
 
-# Local Python
-python -m venv .venv && .\.venv\Scripts\activate   # on Windows
+# ── Local Python (Linux/macOS) ─────────────────────────
+python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn api.main:app --reload
-```
+
+# Windows PowerShell
+python -m venv .venv; .\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+uvicorn api.main:app --reload
+
 
 ## Example request
 
@@ -50,9 +56,11 @@ curl -L -o distilbert-imdb/model.safetensors \
 
 ```text
 imdb-sentiment/
-├ api/               # FastAPI app
-├ distilbert-imdb/   # fine-tuned weights & tokenizer
-├ Dockerfile
+├ api/                 FastAPI service (POST /predict)
+├ distilbert-imdb/     ← place model.safetensors + tokenizer files here
+├ Dockerfile           Container build
+├ notebooks/           Training & evaluation recipe
 ├ requirements.txt
 └ README.md
 ```
+
