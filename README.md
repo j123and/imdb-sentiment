@@ -37,7 +37,9 @@ uvicorn api.main:app --reload
 ```http
 POST /predict
 { "text": "Surprisingly good movie!" }
-→ { "label": "positive", "confidence": 0.97 }
+
+→ 200 OK
+  { "label": "positive", "confidence": 0.97 }
 ```
 
 ## Model weights (>100 MB)
@@ -63,5 +65,6 @@ imdb-sentiment/
 ├ requirements.txt
 └ README.md
 ```
+
 
 
