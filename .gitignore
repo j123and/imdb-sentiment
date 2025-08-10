@@ -1,2 +1,6 @@
 distilbert-imdb/model.safetensors
 
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
