@@ -49,7 +49,7 @@ Download it once and place it under `distilbert-imdb/`:
 
 ```bash
 curl -L -o distilbert-imdb/model.safetensors \
-  https://github.com/j123and/imdb-sentiment/releases/download/v1.0.0/model.safetensors
+  https://github.com/j123and/imdb-sentiment/releases/download/v1.4.0/model.safetensors
 ```
 
 (Or let the app fetch it automatically on first run.)
@@ -65,6 +65,7 @@ imdb-sentiment/
 ├ requirements.txt
 └ README.md
 ```
+
 
 
 
