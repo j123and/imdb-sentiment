@@ -59,12 +59,13 @@ curl -L -o distilbert-imdb/model.safetensors \
 ```text
 imdb-sentiment/
 ├ api/                 FastAPI service (POST /predict)
-├ distilbert-imdb/     ← place model.safetensors + tokenizer files here
+├ distilbert-imdb/     model.safetensors + tokenizer files here
 ├ Dockerfile           Container build
 ├ notebooks/           Training & evaluation recipe
 ├ requirements.txt
 └ README.md
 ```
+
 
 
 
